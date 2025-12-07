@@ -1222,7 +1222,7 @@ export default function Home() {
             {/* Left Column - Contact Form */}
             <div>
               {/* Contact Form */}
-              <div className="p-6 md:p-8 bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-slate-200/50 lg:h-[640px] flex flex-col">
+              <div className="p-6 md:p-8 bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-slate-200/50 flex flex-col">
                 <div className="mb-4 md:mb-6">
                   <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">Send a Message</h3>
                   <p className="text-sm md:text-base text-slate-600">Fill out the form below and I'll get back to you within 24 hours</p>
@@ -1294,7 +1294,7 @@ export default function Home() {
 
                   <button
                     type="submit"
-                    className="group relative w-full py-3 md:py-4 mt-4 md:mt-5 flex-shrink-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white rounded-xl font-bold text-base md:text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-500 overflow-hidden flex items-center justify-center gap-3"
+                    className="group relative w-full py-2 md:py-3 mt-2 md:mt-3 flex-shrink-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white rounded-xl font-bold text-sm md:text-base shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-500 overflow-hidden flex items-center justify-center gap-2 md:gap-3"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                     
@@ -1309,7 +1309,7 @@ export default function Home() {
             </div>
 
             {/* Right Column - Google Map */}
-            <div className="space-y-6 lg:h-[640px] flex flex-col">
+            <div className="space-y-6 flex flex-col">
               <div>
                 <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-white h-[300px] lg:h-[420px]">
                   <iframe
