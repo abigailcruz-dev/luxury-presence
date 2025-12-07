@@ -14,8 +14,8 @@ function useScrollAnimation() {
         setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0.05,
+        rootMargin: '0px 0px 50px 0px'
       }
     );
 
@@ -215,7 +215,7 @@ export default function Home() {
         
         <div 
           ref={aboutSection.elementRef}
-          className={`max-w-7xl mx-auto relative transition-all duration-1000 ${
+          className={`max-w-7xl mx-auto relative transition-all duration-700 ${
             aboutSection.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
           }`}
         >
@@ -355,7 +355,7 @@ export default function Home() {
         
         <div 
           ref={servicesSection.elementRef}
-          className={`max-w-7xl mx-auto relative transition-all duration-1000 ${
+          className={`max-w-7xl mx-auto relative transition-all duration-700 ${
             servicesSection.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
           }`}
         >
@@ -472,7 +472,7 @@ export default function Home() {
 
         <div 
           ref={searchSection.elementRef}
-          className={`max-w-6xl mx-auto relative transition-all duration-1000 ${
+          className={`max-w-6xl mx-auto relative transition-all duration-700 ${
             searchSection.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
           }`}
         >
@@ -678,7 +678,7 @@ export default function Home() {
 
         <div 
           ref={gallerySection.elementRef}
-          className={`max-w-7xl mx-auto relative transition-all duration-1000 ${
+          className={`max-w-7xl mx-auto relative transition-all duration-700 ${
             gallerySection.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
           }`}
         >
@@ -875,7 +875,7 @@ export default function Home() {
 
         <div 
           ref={premiumSection.elementRef}
-          className={`max-w-7xl mx-auto relative transition-all duration-1000 ${
+          className={`max-w-7xl mx-auto relative transition-all duration-700 ${
             premiumSection.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
           }`}
         >
@@ -1086,7 +1086,7 @@ export default function Home() {
         
         <div 
           ref={testimonialsSection.elementRef}
-          className={`max-w-7xl mx-auto relative transition-all duration-1000 ${
+          className={`max-w-7xl mx-auto relative transition-all duration-700 ${
             testimonialsSection.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
           }`}
         >
@@ -1189,30 +1189,30 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 px-6 bg-gradient-to-br from-white via-slate-50 to-white relative overflow-hidden">
+      <section className="py-12 md:py-20 lg:py-24 px-4 md:px-6 bg-gradient-to-br from-white via-slate-50 to-white relative overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-amber-100/30 to-transparent rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-blue-100/20 to-transparent rounded-full blur-3xl" />
 
         <div 
           ref={contactSection.elementRef}
-          className={`max-w-7xl mx-auto relative transition-all duration-1000 ${
+          className={`max-w-7xl mx-auto relative transition-all duration-700 ${
             contactSection.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
           }`}
         >
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-amber-50 via-yellow-50 to-amber-50 border-2 border-amber-200/50 shadow-lg mb-6">
+          <div className="text-center mb-12 md:mb-16">
+            <div className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full bg-gradient-to-r from-amber-50 via-yellow-50 to-amber-50 border-2 border-amber-200/50 shadow-lg mb-4 md:mb-6">
               <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
-              <span className="text-amber-900 text-sm font-bold tracking-[0.2em] uppercase">
+              <span className="text-amber-900 text-xs md:text-sm font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase">
                 Get In Touch
               </span>
               <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-3 md:mb-4 px-4">
               Let's Make Your Move
             </h2>
-            <p className="text-xl text-amber-600 font-semibold">
+            <p className="text-base sm:text-lg md:text-xl text-amber-600 font-semibold px-4 max-w-3xl mx-auto">
               Ready to buy or sell your property? I'm here to help you every step of the way
             </p>
           </div>
@@ -1222,14 +1222,14 @@ export default function Home() {
             {/* Left Column - Contact Form */}
             <div>
               {/* Contact Form */}
-              <div className="p-8 bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-slate-200/50 h-[640px] flex flex-col">
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Send a Message</h3>
-                  <p className="text-slate-600">Fill out the form below and I'll get back to you within 24 hours</p>
+              <div className="p-6 md:p-8 bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-slate-200/50 lg:h-[640px] flex flex-col">
+                <div className="mb-4 md:mb-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">Send a Message</h3>
+                  <p className="text-sm md:text-base text-slate-600">Fill out the form below and I'll get back to you within 24 hours</p>
                 </div>
 
-                <form className="flex-1 flex flex-col">
-                  <div className="space-y-5 flex-1 flex flex-col">
+                <form className="flex-1 flex flex-col min-h-0">
+                  <div className="space-y-4 md:space-y-5">
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">
                         Full Name *
@@ -1237,12 +1237,12 @@ export default function Home() {
                       <input
                         type="text"
                         required
-                        className="w-full px-4 py-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:bg-white text-slate-900 transition-all duration-300"
+                        className="w-full px-4 py-2.5 md:py-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:bg-white text-slate-900 transition-all duration-300"
                         placeholder="John Doe"
                       />
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">
                           Email *
@@ -1250,7 +1250,7 @@ export default function Home() {
                         <input
                           type="email"
                           required
-                          className="w-full px-4 py-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:bg-white text-slate-900 transition-all duration-300"
+                          className="w-full px-4 py-2.5 md:py-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:bg-white text-slate-900 transition-all duration-300"
                           placeholder="john@example.com"
                         />
                       </div>
@@ -1260,7 +1260,7 @@ export default function Home() {
                         </label>
                         <input
                           type="tel"
-                          className="w-full px-4 py-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:bg-white text-slate-900 transition-all duration-300"
+                          className="w-full px-4 py-2.5 md:py-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:bg-white text-slate-900 transition-all duration-300"
                           placeholder="(206) 555-0123"
                         />
                       </div>
@@ -1270,7 +1270,7 @@ export default function Home() {
                       <label className="block text-sm font-semibold text-slate-700 mb-2">
                         I'm Interested In
                       </label>
-                      <select className="w-full px-4 py-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:bg-white text-slate-900 transition-all duration-300">
+                      <select className="w-full px-4 py-2.5 md:py-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:bg-white text-slate-900 transition-all duration-300">
                         <option>Buying a Property</option>
                         <option>Selling a Property</option>
                         <option>Property Valuation</option>
@@ -1279,13 +1279,14 @@ export default function Home() {
                       </select>
                     </div>
 
-                    <div className="flex-1 flex flex-col">
+                    <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">
                         Message *
                       </label>
                       <textarea
                         required
-                        className="flex-1 w-full px-4 py-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:bg-white text-slate-900 resize-none transition-all duration-300"
+                        rows={2}
+                        className="w-full px-4 py-2.5 md:py-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:bg-white text-slate-900 resize-none transition-all duration-300 h-20 lg:h-24"
                         placeholder="Tell me about your real estate needs..."
                       />
                     </div>
@@ -1293,13 +1294,13 @@ export default function Home() {
 
                   <button
                     type="submit"
-                    className="group relative w-full py-4 mt-5 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-500 overflow-hidden flex items-center justify-center gap-3"
+                    className="group relative w-full py-3 md:py-4 mt-4 md:mt-5 flex-shrink-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white rounded-xl font-bold text-base md:text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-500 overflow-hidden flex items-center justify-center gap-3"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                     
-                    <span className="relative font-semibold text-lg">Send Message</span>
+                    <span className="relative font-semibold">Send Message</span>
                     
-                    <svg className="relative w-6 h-6 text-amber-400 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="relative w-5 h-5 md:w-6 md:h-6 text-amber-400 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </button>
@@ -1308,9 +1309,9 @@ export default function Home() {
             </div>
 
             {/* Right Column - Google Map */}
-            <div className="space-y-6 h-[640px] flex flex-col">
+            <div className="space-y-6 lg:h-[640px] flex flex-col">
               <div>
-                <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-white h-[420px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-white h-[300px] lg:h-[420px]">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3219.1234567890!2d-115.9552875!3d36.1844024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDExJzAzLjgiTiAxMTXCsDU3JzE5LjAiVw!5e0!3m2!1sen!2sus!4v1234567890"
                     width="100%"
@@ -1347,8 +1348,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Contact Info Cards - Horizontal Layout */}
-              <div className="grid grid-cols-3 gap-4">
+              {/* Contact Info Cards - Responsive Layout */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 {
                   icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />,
@@ -1372,17 +1373,17 @@ export default function Home() {
                 }
               ].map((item, index) => (
                 <div key={index} className="group relative h-full">
-                  <div className="relative p-6 bg-slate-50 rounded-2xl shadow-md hover:shadow-lg border border-slate-200/50 hover:border-amber-300 hover:bg-amber-50/50 transition-all duration-300 hover:-translate-y-1 h-full min-h-[140px] flex flex-col">
-                    <div className="flex flex-col items-center text-center gap-3 flex-1">
+                  <div className="relative p-5 md:p-6 bg-slate-50 rounded-2xl shadow-md hover:shadow-lg border border-slate-200/50 hover:border-amber-300 hover:bg-amber-50/50 transition-all duration-300 hover:-translate-y-1 h-full md:min-h-[140px] flex flex-col">
+                    <div className="flex md:flex-col items-center md:text-center gap-4 md:gap-3 flex-1">
                       <div className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           {item.icon}
                         </svg>
                       </div>
-                      <div className="w-full flex-1 flex flex-col justify-center">
+                      <div className="w-full flex-1 flex flex-col justify-center text-left md:text-center">
                         <h3 className="font-bold text-slate-900 text-base mb-1">{item.title}</h3>
                         {item.link ? (
-                          <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-slate-600 text-sm font-normal hover:text-amber-600 transition-colors">
+                          <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-slate-600 text-sm font-normal hover:text-amber-600 transition-colors break-words">
                             {item.content}
                           </a>
                         ) : (
@@ -1398,10 +1399,10 @@ export default function Home() {
           </div>
 
           {/* Social Links - Below Map */}
-          <div className="mt-8">
-            <div className="p-6 bg-slate-50 rounded-2xl shadow-md border border-slate-200/50">
-              <h3 className="font-bold text-slate-900 text-lg mb-4 text-center">Connect With Us</h3>
-              <div className="flex items-center justify-center gap-4">
+          <div className="mt-6 md:mt-8">
+            <div className="p-5 md:p-6 bg-slate-50 rounded-2xl shadow-md border border-slate-200/50">
+              <h3 className="font-bold text-slate-900 text-base md:text-lg mb-3 md:mb-4 text-center">Connect With Us</h3>
+              <div className="flex items-center justify-center gap-3 md:gap-4 flex-wrap">
                 {[
                   { 
                     icon: <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>, 
@@ -1429,10 +1430,10 @@ export default function Home() {
                     href={social.url} 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/social p-4 rounded-xl border-2 border-slate-300 hover:border-amber-500 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-110" 
+                    className="group/social p-3 md:p-4 rounded-xl border-2 border-slate-300 hover:border-amber-500 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-110 active:scale-95" 
                     title={social.name}
                   >
-                    <svg className="w-6 h-6 text-slate-600 group-hover/social:text-amber-500 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 md:w-6 md:h-6 text-slate-600 group-hover/social:text-amber-500 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
                       {social.icon}
                     </svg>
                   </a>
