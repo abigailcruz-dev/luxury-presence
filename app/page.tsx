@@ -699,8 +699,8 @@ export default function Home() {
             </p>
           </div>
 
-          {/* 3D Carousel Gallery */}
-          <div className="relative w-full h-[600px] flex items-center justify-center overflow-hidden">
+          {/* 3D Carousel Gallery - Desktop View (hidden on mobile) */}
+          <div className="hidden md:block relative w-full h-[600px] flex items-center justify-center overflow-hidden">
             {/* Background Glow Effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-transparent to-amber-500/5" />
             
@@ -787,6 +787,65 @@ export default function Home() {
                   onClick={() => setCurrentSlide(i)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     i === currentSlide ? 'w-12 bg-amber-400' : 'w-2 bg-slate-400/60 hover:bg-slate-600'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile Gallery - Swipeable Card View */}
+          <div className="md:hidden relative w-full px-4">
+            <div className="relative overflow-hidden">
+              {/* Single Card Display */}
+              <div className="relative w-full aspect-square max-w-md mx-auto">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl ring-4 ring-amber-400">
+                  <Image
+                    src={`/pg ${currentSlide + 1}.jpg`}
+                    alt={`Property ${currentSlide + 1}`}
+                    fill
+                    className="object-cover"
+                    quality={95}
+                    sizes="(max-width: 768px) 100vw"
+                  />
+                  
+                  {/* Image Info Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-900/95 via-slate-900/80 to-transparent">
+                    <div className="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">
+                      Featured Property {currentSlide + 1}
+                    </div>
+                    <h3 className="text-xl font-bold text-white">Premium Estate</h3>
+                  </div>
+                </div>
+              </div>
+
+              {/* Navigation Arrows - Mobile Optimized */}
+              <button 
+                onClick={() => setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides)}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-40 p-3 rounded-full bg-slate-900/90 backdrop-blur-md active:bg-amber-400 transition-all duration-200 shadow-xl"
+              >
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              
+              <button 
+                onClick={() => setCurrentSlide((prev) => (prev + 1) % totalSlides)}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-40 p-3 rounded-full bg-slate-900/90 backdrop-blur-md active:bg-amber-400 transition-all duration-200 shadow-xl"
+              >
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Slide Indicators - Mobile */}
+            <div className="flex justify-center gap-2 mt-6">
+              {[...Array(totalSlides)].map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentSlide(i)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    i === currentSlide ? 'w-8 bg-amber-400' : 'w-2 bg-slate-400/60'
                   }`}
                 />
               ))}
